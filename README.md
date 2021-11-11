@@ -1,1 +1,1 @@
-Basic vue component librairie, inspired of <a href="https://quatrochan.github.io/Equal/">Equal</a>
+Basic vue component library, inspired of <a href="https://quatrochan.github.io/Equal/">Equal</a>
