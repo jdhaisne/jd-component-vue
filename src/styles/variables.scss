@@ -1,0 +1,32 @@
+//type color
+$primary-color: #3051ff;
+$success-color: #07d85b;
+$danger-color: #f93155;
+$warning-color: #ffba00;
+$black-color: #131313;
+$secondary-black-color: #232323;
+$disabled-bg-color: #f5f6f6;
+$grey-text-color: #5f616c;
+
+$neutral-color: #c4c4c4;
+$secondary-text-color: #d3dae6;
+
+//button
+$btn-font-weight: 500;
+$btn-normal-padding: 8px 20px;
+
+//border
+
+$disabled-border-color: #c5cbd7;
+$default-border-color: #d3dae6;
+$border-radius-base: 4px;
+$border-radius-round: 40px;
+
+//text 
+$default-text-size: 14px;
+$default-text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.07);
+
+// shadows
+$popup-shadow: 0px 0px 0px 0.6px rgba(0, 0, 0, 0.15),
+  0px 1.5px 1px rgba(0, 0, 0, 0.1);
+$input-shadow: 0 1px 1px rgba(211, 218, 230, 30%);

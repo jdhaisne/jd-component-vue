@@ -1,0 +1,129 @@
+@import '../../styles/func.scss';
+@import '../../styles/variables.scss';
+
+
+@mixin set-button-type($bg-color) {
+    background-color: $bg-color;
+    box-shadow: 0 2px 4px rgba($bg-color, 40%);
+    border: 1px solid $bg-color;
+
+    &:hover{
+        background-color: tint($bg-color, 16%);
+        border: 1px solid tint($bg-color, 16%);
+    }
+    &:focus {
+        box-shadow: 0 2px 4px rgba($bg-color, 40%), 0 0 0 3px rgba($bg-color, 20%);
+    }
+    &:active {
+        background-color: darken($bg-color, 7%);
+        border: 1px solid darken($bg-color, 7%);
+        box-shadow: none;
+    }
+
+    &.jd-btn--text {
+        color: $bg-color;
+        background: transparent;
+        border: none;
+        text-shadow: none;
+        box-shadow: none;
+    }
+    &.jd-btn--text:hover {
+        background-color: rgba($bg-color, 6%);
+    }
+    &.jd-btn--text:focus {
+        box-shadow: 0 0 0 3px rgba($bg-color, 20%);
+
+    }
+    &.jd-btn--text:active {
+        background-color: rgba($bg-color, 20%);
+        box-shadow: none;
+    }
+}
+
+@mixin set-outlined-type($bg-color) {
+    color: $bg-color;
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid $bg-color;
+    text-shadow: none;
+
+    &:hover {
+        background-color: rgba($bg-color, 7%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($bg-color, 20%);
+        }
+    &:active {
+        background-color: rgba($bg-color, 15%) !important;
+        top: 0;
+    }
+}
+
+
+.jd-btn {
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-family: inherit;
+    align-items: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+    color: #fff;
+    font-weight: $btn-font-weight;
+    font-size: $default-text-size;
+    line-height: 1;
+    border: 0;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: $border-radius-base;
+    padding: $btn-normal-padding;
+    outline: none;
+    user-select: none;
+
+    &--block {
+        width: 100%;
+    }
+
+    &--rounded {
+        border-radius: $border-radius-round;
+    }
+
+    &--primary {
+        @include set-button-type($primary-color)
+    }
+    &--primary.jd-btn--outlined {
+        @include set-outlined-type($primary-color)
+    }
+
+    &--success {
+        @include set-button-type($success-color)
+    }
+    &--success.jd-btn--outlined {
+        @include set-outlined-type($success-color)
+    }
+
+    &--danger {
+        @include set-button-type($danger-color)
+    }
+    &--danger.jd-btn--outlined {
+        @include set-outlined-type($danger-color)
+    }
+
+    &--warning {
+        @include set-button-type($warning-color)
+    }
+    &--warning.jd-btn--outlined {
+        @include set-outlined-type($warning-color)
+    }
+    
+    &--big {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+    &--small {
+        padding: 5px 14px;
+    }
+            
+    
+}

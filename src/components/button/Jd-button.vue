@@ -1,21 +1,27 @@
 <template>
     <button :disabled="disabled" class ="jd-btn" :class="rootClasses">
-        <span v-if="$slots.default" class="jd-btn-text">
+        <span v-if="$slots.default" class="jd-btn--text">
             <slot></slot>
         </span>
     </button>
 </template>
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { Sizes } from "@/models/enums"
-import { Colors } from '../models/enums/Colors'
+import { Sizes, Colors } from "../../models/enums"
+
 
 export default defineComponent({
+    name:"jd-button",
     props: {
+        type: {
+            type: String,
+            default: Colors.NEUTRAL
+        },
         rounded:    { type: Boolean },
         block:      { type: Boolean },
         outlined:   { type: Boolean },
         disabled:   { type: Boolean },
+        text:       { type: Boolean },
         size:       {
                     type: String,
                     default: Sizes.NORMAL,
@@ -35,7 +41,12 @@ export default defineComponent({
             "jd-btn--empty":    !slots.default,
             "jd-btn--outlined": props.outlined,
             "jd-btn--block":    props.block,
-            "jd-btn--rounded":  props.rounded
+            "jd-btn--rounded":  props.rounded,
+            "jd-btn--text":     props.text,
+            [`jd-btn--${props.size}`]: props.size,
+            ...(props.type
+                ? { [`jd-btn--${props.type}`]: true }
+                : { 'jd-btn--neutal': true}),
         }])
         
         return { rootClasses }
