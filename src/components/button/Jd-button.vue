@@ -1,17 +1,22 @@
 <template>
     <button :disabled="disabled" class ="jd-btn" :class="rootClasses">
+        <jd-icon v-if="icon" class="jd-btn-icon" :name="icon"/>
         <span v-if="$slots.default" class="jd-btn--text">
             <slot></slot>
         </span>
     </button>
 </template>
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue' 
+import JdIcon from "../icon"
 import { Sizes, Colors } from "../../models/enums"
 
 
 export default defineComponent({
-    name:"jd-button",
+    name: "jd-button",
+    components: {
+        JdIcon,
+    },
     props: {
         type: {
             type: String,
@@ -22,6 +27,9 @@ export default defineComponent({
         outlined:   { type: Boolean },
         disabled:   { type: Boolean },
         text:       { type: Boolean },
+        pulse:      { type: Boolean },
+        loading:    { type: Boolean },
+        icon:       { type: String },
         size:       {
                     type: String,
                     default: Sizes.NORMAL,
@@ -43,6 +51,7 @@ export default defineComponent({
             "jd-btn--block":    props.block,
             "jd-btn--rounded":  props.rounded,
             "jd-btn--text":     props.text,
+            "pulse":    props.pulse,
             [`jd-btn--${props.size}`]: props.size,
             ...(props.type
                 ? { [`jd-btn--${props.type}`]: true }
