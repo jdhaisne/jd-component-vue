@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import JdCheckbox from './components/checkbox/Jd-checkbox.vue';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 </script>
 
 <template>
-<div style="display: flex;">
+<div class="component-showcase">
   <jd-button type="primary" icon="face">Click me !</jd-button>
   <jd-button type="success">Click me !</jd-button>
   <jd-button type="danger" size="small">Click me !</jd-button>
@@ -16,7 +17,27 @@
 <div>
   <jd-button type="success" block>Click me !</jd-button>
 </div>
+<div class="component-showcase"> 
+  <jd-checkbox type="warning" label="warning" v-model="checkboxValue1" disabled>test1</jd-checkbox>
+  <jd-checkbox type="primary" label="primary" v-model="checkboxValue2" line-through>
+    <template v-slot:default>label</template>
+    <template v-slot:sublabel >subLabel</template>
+  </jd-checkbox>
+  <jd-checkbox type="warning" label="warning" pulse v-model="checkboxValue3">test3</jd-checkbox>
+</div>
 </template>
+<script lang="ts">
+
+export default {
+  name: "app",
+  data: () => ({
+    checkboxValue1: false,
+    checkboxValue2: false,
+    checkboxValue3: true,
+  }),
+  
+}
+</script>
 
 <style>
 #app {
@@ -26,5 +47,9 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.component-showcase {
+  display: flex;
 }
 </style>

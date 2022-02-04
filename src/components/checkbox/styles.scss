@@ -1,0 +1,122 @@
+@import '../../styles/func.scss';
+@import '../../styles/variables.scss';
+
+@mixin set-checkbox-type($bg-color) {
+    &:hover {
+        border: 1px solid $bg-color ;
+    }
+    &--checked {
+        background-color: $bg-color;
+        &>i {
+            color: #fff;
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+
+    
+}
+
+.jd-checkbox-input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.jd-checkbox-wrapper {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: normal;
+    justify-content: flex-start;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+}
+
+.jd-checkbox-check-wrapper {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.jd-checkbox-label-wrapper {
+    display: inline-block;
+}
+
+.jd-checkbox {
+    $color: #fff;
+    box-sizing: border-box;
+    background-color: $color;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid $secondary-text-color;
+    border-radius: 2px;
+    height: 18px;
+    width: 18px;
+    overflow: hidden;
+    &>i {
+        opacity: 0;
+        margin-top: 10px;
+        transition: all .15s;
+    }
+    &--primary {
+        @include set-checkbox-type($primary-color)
+    }
+    &--success {
+        @include set-checkbox-type($success-color)
+    }
+    &--danger {
+        @include set-checkbox-type($danger-color)
+    }
+    &--warning {
+        @include set-checkbox-type($warning-color)
+    }
+    &--disabled {
+        border: 1px solid $disabled-border-color;
+        background-color: $disabled-bg-color;
+        text-shadow: none;
+        border: none;
+        cursor: not-allowed;
+    }
+}
+
+.jd-checkbox-label {
+    display: flex;
+    align-items: center;
+    &--sub {
+        color: $grey-text-color;
+    }
+    &::before {
+        transition: all 0.2s ease-out;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        // left: 7px;
+        border-radius: 50px;
+        background: $disabled-border-color;
+        content: '';
+      }
+    &--linethrough {
+        color: $disabled-border-color;
+        &::before {
+            width: 100%;
+        }
+    }
+    &--disabled {
+        color: $disabled-border-color;
+    }
+}
