@@ -56,7 +56,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { Colors } from '../../models/enums'
+    import { Colors } from '../../models/enums'
 import JdIcon from '../icon/Jd-icon.vue'
 
 export default defineComponent({
@@ -72,7 +72,6 @@ export default defineComponent({
                 default: "check"},
         lineThrough: { type: Boolean },
         disabled: { type: Boolean },
-        value: { type: Boolean },
         pulse: { type: Boolean },
         modelValue: {}
     },

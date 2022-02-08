@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import JdCheckbox from './components/checkbox/Jd-checkbox.vue';
+import JdRadio from './components/radio/Jd-radio.vue';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 </script>
@@ -25,6 +26,14 @@ import JdCheckbox from './components/checkbox/Jd-checkbox.vue';
   </jd-checkbox>
   <jd-checkbox type="warning" label="warning" pulse v-model="checkboxValue3">test3</jd-checkbox>
 </div>
+
+<div class="component-showcase">
+  <jd-radio v-model="radioModel1" value="0" label="choix 1"></jd-radio>
+  <jd-radio v-model="radioModel1" type="success" value="1" label="choix 2"></jd-radio>
+  <jd-radio v-model="radioModel1" type="warning" value="2" label="choix 3"></jd-radio>
+  <jd-radio v-model="radioModel1" type="danger" pulse sub-label="subLabel 1" value="3" label="choix 4"></jd-radio>
+  <jd-radio v-model="radioModel1" type="danger" disabled sub-label="subLabel 2" value="4" label="choix 5"></jd-radio>
+</div>
 </template>
 <script lang="ts">
 
@@ -34,6 +43,7 @@ export default {
     checkboxValue1: false,
     checkboxValue2: false,
     checkboxValue3: true,
+    radioModel1: '2',
   }),
   
 }
