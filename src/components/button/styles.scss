@@ -116,6 +116,12 @@
     &--warning.jd-btn--outlined {
         @include set-outlined-type($warning-color)
     }
+    &--neutral {
+        @include set-button-type($neutral-color)
+    }
+    &--neutral.jd-btn--outlined {
+        @include set-outlined-type($neutral-color)
+    }
     
     &--big {
         padding: 14px 28px;
