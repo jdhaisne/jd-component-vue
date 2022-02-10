@@ -1,11 +1,23 @@
 <script setup lang="ts">
-import JdCheckbox from './components/checkbox/Jd-checkbox.vue';
-import JdRadio from './components/radio/Jd-radio.vue';
+import JdTextField from './components/textField/Jd-textField.vue';
+
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 </script>
 
 <template>
+<jd-demobox>
+  <template v-slot:scene>
+    <jd-button :rounded="button1Rounded" :disabled="button1Disabled">
+      {{ button1Label }}
+    </jd-button>
+  </template>
+  <template v-slot:tools>
+    <jd-textfield v-model="button1Label"/>
+    <jd-checkbox v-model="button1Rounded">Rounded</jd-checkbox>
+    <jd-checkbox v-model="button1Disabled">Disabled</jd-checkbox>
+  </template>
+</jd-demobox>
 <div class="component-showcase">
   <jd-button type="primary" icon="face">Click me !</jd-button>
   <jd-button type="success">Click me !</jd-button>
@@ -34,16 +46,28 @@ import JdRadio from './components/radio/Jd-radio.vue';
   <jd-radio v-model="radioModel1" type="danger" pulse sub-label="subLabel 1" value="3" label="choix 4"></jd-radio>
   <jd-radio v-model="radioModel1" type="danger" disabled sub-label="subLabel 2" value="4" label="choix 5"></jd-radio>
 </div>
+<div class="component-showcase">
+  <jd-textfield v-model="textfieldModel1" disabled message="bg"/>
+  <jd-textfield v-model="textfieldModel2" label-top="your input" placeholder="your text" left-icon="check" right-icon="face" suffix=".com" prefix="https://"/>
+  <span>{{ textfieldModel2 }}
+  </span>
+</div>
 </template>
 <script lang="ts">
 
 export default {
   name: "app",
   data: () => ({
+    button1Rounded: false,
+    button1Disabled: false,
+    button1Label:   '',
+    button1Type:    '',
     checkboxValue1: false,
     checkboxValue2: false,
     checkboxValue3: true,
     radioModel1: '2',
+    textfieldModel1: '',
+    textfieldModel2: '',
   }),
   
 }
@@ -61,5 +85,6 @@ export default {
 
 .component-showcase {
   display: flex;
+  justify-content: space-between;
 }
 </style>
