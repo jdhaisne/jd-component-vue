@@ -60,7 +60,7 @@ import JdTextField from './components/textField/Jd-textField.vue';
 </jd-demobox>
 
 <jd-demobox>
-  <template>
+  <template v-slot:default>
     <jd-textfield v-model="textfieldModel1" disabled message="bg"/>
     <jd-textfield v-model="textfieldModel2" label-top="your input" placeholder="your text" left-icon="check" right-icon="face" suffix=".com" prefix="https://"/>
     <span>{{ textfieldModel2 }}
