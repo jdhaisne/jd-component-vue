@@ -1,8 +1,8 @@
 import { App } from 'vue'
-import DemoBox from './Jd-demoBox.vue'
+import Demobox from './Jd-demobox.vue'
 
-DemoBox.install = (Vue: App) => {
-    Vue.component(DemoBox.name, DemoBox)
+Demobox.install = (Vue: App) => {
+    Vue.component(Demobox.name, Demobox)
 }
 
-export default DemoBox
+export default Demobox

@@ -1,6 +1,6 @@
 import Button from './components/button'
 import Checkbox from './components/checkbox'
-import DemoBox from './components/demobox'
+import Demobox from './components/demobox'
 import Icon from './components/icon'
 import Radio from './components/radio'
 import Select from './components/select'
@@ -12,7 +12,7 @@ import { App } from 'vue'
 const components = {
     Button,
     Checkbox,
-    DemoBox,
+    Demobox,
     Icon,
     Radio,
     Select,

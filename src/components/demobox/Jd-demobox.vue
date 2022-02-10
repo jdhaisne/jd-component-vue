@@ -1,9 +1,9 @@
 <template>
     <div class="jd-demobox">
         <div class="jd-demobox-scene">
-            <slot name="scene"></slot>
+            <slot name="default"></slot>
         </div>
-        <div class="jd-demobox-tools">
+        <div v-if="$slots.tools" class="jd-demobox-tools">
             <slot name="tools"></slot>
         </div>
     </div>
