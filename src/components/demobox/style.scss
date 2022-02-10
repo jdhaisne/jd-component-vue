@@ -1,0 +1,24 @@
+@import '../../styles/func.scss';
+@import '../../styles/variables.scss';
+
+.jd-demobox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid $default-border-color;
+}
+
+.jd-demobox-scene {
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jd-demobox-tools {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    flex-grow: 2;
+    border-left: 1px solid $default-border-color;
+}
